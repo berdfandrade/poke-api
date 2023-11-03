@@ -1,39 +1,40 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Document, Schema } from 'mongoose';
 
-interface IPokemon extends Document {
+// Defina uma interface que corresponda à estrutura do seu documento no MongoDB
+interface PokemonDocument extends Document {
   _id: string;
-  number: string;
   image_url: string;
-  id: string;
-  name: string;
-  type1: string;
-  type2: string;
-  total: string;
-  hp: string;
-  attack: string;
-  defense: string;
-  spAtk: string;
-  spDef: string;
-  speed: string;
+  Id: string;
+  Names: string;
+  Type1: string;
+  Type2: string;
+  Total: string;
+  HP: string;
+  Attack: string;
+  Defense: string;
+  "Sp. Atk": string;
+  "Sp. Def": string;
+  Speed: string;
 }
 
-const pokemonSchema: Schema = new Schema<IPokemon>({
+// Defina o schema correspondente ao seu documento
+const PokemonSchema = new Schema<PokemonDocument>({
   _id: String,
-  number: String,
   image_url: String,
-  id: String,
-  name: String,
-  type1: String,
-  type2: String,
-  total: String,
-  hp: String,
-  attack: String,
-  defense: String,
-  spAtk: String,
-  spDef: String,
-  speed: String
+  Id: String,
+  Names: String,
+  Type1: String,
+  Type2: String,
+  Total: String,
+  HP: String,
+  Attack: String,
+  Defense: String,
+  "Sp. Atk": String,
+  "Sp. Def": String,
+  Speed: String,
 });
 
-const Pokemon = mongoose.model<IPokemon>('Pokemon', pokemonSchema);
+// Crie o modelo com base no schema
+const PokemonModel = mongoose.model<PokemonDocument>('Pokemon', PokemonSchema);
 
-export default Pokemon;
+export default PokemonModel;

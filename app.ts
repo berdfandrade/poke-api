@@ -1,14 +1,14 @@
 import express from 'express';
 import {Request, Response } from 'express'
-import dbConnect from './config/dbConfig';
-import router from './src/routes/pokeRoutes';
+import dbConnect from './src/config/dbConfig'
+import routes from './src/routes';
 
 const app = express();
 const port = process.env.PORT || 3001;
 
 dbConnect()
 
-app.use(router)
+routes(app)
 
 app.get('/', (req : Request, res : Response) => {
   res.send({messagem : 'Hello, World!'});
