@@ -17,3 +17,7 @@ const swaggerSpec = swaggerJSDoc(options);
 
 export default swaggerSpec
   
+
+/* 
+    HP = (2 x base + IV + EV / 4) x level / 100 + level + 10 
+*/ 
