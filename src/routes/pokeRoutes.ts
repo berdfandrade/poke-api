@@ -42,5 +42,6 @@ router.get('/poke/all', PokemonController.getPokemons);
  *         description: Não encontrado. O Pokémon não foi encontrado.
  */
 router.get('/poke/:pokemon', PokemonController.getAPokemon);
+router.get('/poke/:pokemon/:limit', PokemonController.getPokemonLimit);
 
 export default router;
