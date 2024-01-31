@@ -1,11 +1,13 @@
 
 import mongoose from 'mongoose';
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const dbConnect = () => {
-  const pass = 't96FFeWKARQ5EqLR';
-  const url = `mongodb+srv://berdfandrade:${pass}@cluster0.eerqcrh.mongodb.net/?retryWrites=true&w=majority`;
+  const URL : any = process.env.DB_URL
   mongoose
-    .connect(url)
+    .connect(URL)
     .then(() => {
       console.log('Conexão com o banco de dados estabelecida com sucesso');
     })

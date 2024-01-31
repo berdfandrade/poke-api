@@ -15,6 +15,15 @@ export default class PokemonController {
       });
   }
 
+  static getPokemonLimit(req : Request, res : Response) {
+    Pokemon.find().then((pokemon) => {
+      res.status(200).json(pokemon)
+    }).catch((error) => {
+      console.error('Erro ao buscar os pokémons:', error);
+      res.status(500).json({error : 'Error on fetching pokémon data'})
+    })
+  }
+
   static getAPokemon(req: Request, res: Response) {
     const pokemonName = req.params.pokemon;
 

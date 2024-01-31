@@ -18,7 +18,10 @@ router.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
  *     responses:
  *       '200':
  *         description: Sucesso. Retorna a lista de Pokémons.
+ *       '500':
+ *         description: Erro ao buscar dados do Pokémon.
  */
+
 router.get('/poke/all', PokemonController.getPokemons);
 
 // Rota para buscar um Pokémon por nome
