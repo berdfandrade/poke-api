@@ -1,10 +1,11 @@
 # Pokémon API
 
 The Pokémon API provides endpoints to retrieve information about Pokemon. It is built using Express, a popular Node.js web application framework.
-Swagger Documentation
+
 
 The API documentation is available using Swagger UI at the /docs endpoint. It allows users to explore and understand the available endpoints and their functionalities.
-Endpoints
+
+#### Endpoints:
 
 #### Get All Pokémons
 
